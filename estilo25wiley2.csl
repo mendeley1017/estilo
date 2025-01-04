@@ -58,7 +58,7 @@
         </if>
         <else-if type="chapter">
           <group delimiter=", ">
-            <text variable="title" text-case="title" prefix="‘" suffix="’"/>
+            , 
             <group prefix="In: ">
               <text variable="container-title" font-style="italic"/>
               <group prefix=", edited by ">
@@ -116,3 +116,4 @@
     </layout>
   </bibliography>
 </style>
+
