@@ -44,7 +44,7 @@
       <text variable="citation-number"/>
     </layout>
   </citation>
-  <bibliography entry-spacing="0" second-field-align="flush">
+  <bibliography entry-spacing="0" second-field-align="flush" hanging-indent="0.8cm">
     <layout suffix=".">
       <text variable="citation-number" prefix="[" suffix="]"/>
       <text macro="author" suffix=", "/>
@@ -62,3 +62,4 @@
     </layout>
   </bibliography>
 </style>
+
