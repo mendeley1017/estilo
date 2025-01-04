@@ -49,7 +49,7 @@
       <text macro="author" suffix=", "/>
       <text variable="title" text-case="title" quotes="true" suffix=". "/>
       <group>
-        <text variable="container-title" form="short" font-style="italic"/>
+        <text variable="container-title" form="short" font-style="italic" suffix=" "/>
         <group delimiter=", ">
           <text macro="year-date"/>
           <group>
