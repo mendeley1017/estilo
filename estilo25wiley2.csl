@@ -72,7 +72,7 @@
             <text variable="publisher-place"/>
             <group delimiter=", ">
               <text term="pages"/>
-              <text variable="page"/>
+              <text variable="page" prefix="p. "/>
             </group>
           </group>
         </else-if>
@@ -102,7 +102,7 @@
         <else>
           <group>
             <text variable="title" text-case="title" prefix="‘" suffix="’"/>
-            <text variable="container-title" form="short" font-style="italic" suffix=" "/>
+            <text variable="container-title" form="short" font-style="italic" suffix=", "/>
             <group delimiter=", ">
               <text macro="year-date"/>
               <group>
