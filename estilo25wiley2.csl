@@ -44,11 +44,13 @@
       <text variable="citation-number"/>
     </layout>
   </citation>
-  <bibliography entry-spacing="0" second-field-align="flush" hanging-indent="0.7cm">
+  <bibliography entry-spacing="0" second-field-align="flush" hanging-indent="0.8cm">
     <layout suffix=".">
       <text variable="citation-number" prefix="[" suffix="]"/>
       <text macro="author" suffix=", "/>
-      <text variable="title" text-case="title" quotes="true" suffix=". "/>
+      <group>
+        <text variable="title" text-case="title" font-style="italic"/>
+      </group>
       <group delimiter=" ">
         <text variable="container-title" form="short" font-style="italic"/>
         <group delimiter=", ">
@@ -62,4 +64,3 @@
     </layout>
   </bibliography>
 </style>
-
