@@ -50,7 +50,7 @@
       <choose>
         <if type="book">
           <group delimiter=", ">
-            <text variable="title" text-case="title" font-style="italic"/>
+            <text variable="title" text-case="title" font-style="italic" prefix="‘" suffix="’"/>
             <text macro="year-date"/>
             <text variable="publisher"/>
             <text variable="publisher-place"/>
@@ -58,7 +58,7 @@
         </if>
         <else-if type="chapter">
           <group delimiter=", ">
-            <text variable="title" text-case="title" quotes="true"/>
+            <text variable="title" text-case="title" prefix="‘" suffix="’"/>
             <group prefix="In: ">
               <text variable="container-title" font-style="italic"/>
               <group prefix=", edited by ">
@@ -78,7 +78,7 @@
         </else-if>
         <else-if type="thesis">
           <group delimiter=", ">
-            <text variable="title" text-case="title" quotes="true"/>
+            <text variable="title" text-case="title" prefix="‘" suffix="’"/>
             <text variable="genre"/>
             <text variable="publisher"/>
             <text macro="year-date"/>
@@ -86,7 +86,7 @@
         </else-if>
         <else-if type="report">
           <group delimiter=", ">
-            <text variable="title" text-case="title" quotes="true"/>
+            <text variable="title" text-case="title" prefix="‘" suffix="’"/>
             <text variable="publisher"/>
             <text variable="publisher-place"/>
             <text macro="year-date"/>
@@ -94,14 +94,14 @@
         </else-if>
         <else-if type="webpage">
           <group delimiter=", ">
-            <text variable="title" text-case="title" quotes="true"/>
+            <text variable="title" text-case="title" prefix="‘" suffix="’"/>
             <text variable="URL" prefix="Available at: "/>
             <text macro="year-date"/>
           </group>
         </else-if>
         <else>
           <group>
-            <text variable="title" text-case="title" quotes="true" suffix=". "/>
+            <text variable="title" text-case="title" prefix="‘" suffix="’"/>
             <text variable="container-title" form="short" font-style="italic" suffix=" "/>
             <group delimiter=", ">
               <text macro="year-date"/>
@@ -116,4 +116,3 @@
     </layout>
   </bibliography>
 </style>
-
