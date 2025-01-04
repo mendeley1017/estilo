@@ -47,17 +47,73 @@
     <layout suffix=".">
       <text variable="citation-number" prefix="[" suffix="]"/>
       <text macro="author" suffix=", "/>
-      <text variable="title" text-case="title" quotes="true" suffix=". "/>
-      <group>
-        <text variable="container-title" form="short" font-style="italic" suffix=" "/>
-        <group delimiter=", ">
-          <text macro="year-date"/>
-          <group>
-            <text variable="volume" font-style="italic"/>
+      <choose>
+        <if type="book">
+          <group delimiter=", ">
+            <text variable="title" text-case="title" font-style="italic"/>
+            <text macro="year-date"/>
+            <text variable="publisher"/>
+            <text variable="publisher-place"/>
           </group>
-          <text variable="page" form="short"/>
-        </group>
-      </group>
+        </if>
+        <else-if type="chapter">
+          <group delimiter=", ">
+            <text variable="title" text-case="title" quotes="true"/>
+            <group prefix="In: ">
+              <text variable="container-title" font-style="italic"/>
+              <group prefix=", edited by ">
+                <names variable="editor">
+                  <name initialize-with=". " delimiter=", " delimiter-precedes-last="always"/>
+                </names>
+              </group>
+            </group>
+            <text macro="year-date"/>
+            <text variable="publisher"/>
+            <text variable="publisher-place"/>
+            <group delimiter=", ">
+              <text term="pages"/>
+              <text variable="page"/>
+            </group>
+          </group>
+        </else-if>
+        <else-if type="thesis">
+          <group delimiter=", ">
+            <text variable="title" text-case="title" quotes="true"/>
+            <text variable="genre"/>
+            <text variable="publisher"/>
+            <text macro="year-date"/>
+          </group>
+        </else-if>
+        <else-if type="report">
+          <group delimiter=", ">
+            <text variable="title" text-case="title" quotes="true"/>
+            <text variable="publisher"/>
+            <text variable="publisher-place"/>
+            <text macro="year-date"/>
+          </group>
+        </else-if>
+        <else-if type="webpage">
+          <group delimiter=", ">
+            <text variable="title" text-case="title" quotes="true"/>
+            <text variable="URL" prefix="Available at: "/>
+            <text macro="year-date"/>
+          </group>
+        </else-if>
+        <else>
+          <group>
+            <text variable="title" text-case="title" quotes="true" suffix=". "/>
+            <text variable="container-title" form="short" font-style="italic" suffix=" "/>
+            <group delimiter=", ">
+              <text macro="year-date"/>
+              <group>
+                <text variable="volume" font-style="italic"/>
+              </group>
+              <text variable="page" form="short"/>
+            </group>
+          </group>
+        </else>
+      </choose>
     </layout>
   </bibliography>
 </style>
+
